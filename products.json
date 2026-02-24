@@ -1,0 +1,136 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "title": "Sony WH-1000XM4 Wireless Headphones",
+      "description": "Industry-leading noise canceling with Dual Noise Sensor technology. Perfect for immersive sound and crystal-clear calls.",
+      "image": "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=800&auto=format&fit=crop",
+      "affiliate_link": "https://www.amazon.com/Sony-WH-1000XM4-Canceling-Headphones-phone-call/dp/B0863TXGM3",
+      "category": "tech",
+      "price": "$348.00",
+      "rating": 4.8,
+      "reviews": 12453
+    },
+    {
+      "id": 2,
+      "title": "Apple AirPods Pro (2nd Generation)",
+      "description": "Active Noise Cancellation, Adaptive Transparency, and Personalized Spatial Audio. Magical experience.",
+      "image": "https://images.unsplash.com/photo-1600294037681-c80b4cb5b434?w=800&auto=format&fit=crop",
+      "affiliate_link": "https://www.amazon.com/Apple-Generation-Cancelling-Transparency-Personalized/dp/B0BDHWDR12",
+      "category": "tech",
+      "price": "$249.99",
+      "rating": 4.7,
+      "reviews": 8762
+    },
+    {
+      "id": 3,
+      "title": "Kindle Paperwhite (16 GB)",
+      "description": "Now with a 6.8\" display, thinner borders, and adjustable warm light. Waterproof and signature design.",
+      "image": "https://images.unsplash.com/photo-1598618586118-31c4f5e38a41?w=800&auto=format&fit=crop",
+      "affiliate_link": "https://www.amazon.com/Kindle-Paperwhite-Adjustable-Design/dp/B08N36XNTT",
+      "category": "tech",
+      "price": "$139.99",
+      "rating": 4.6,
+      "reviews": 32451
+    },
+    {
+      "id": 4,
+      "title": "Stanley IceFlow Stainless Steel Tumbler",
+      "description": "30 oz insulated tumbler with straw. Keeps drinks cold for 12 hours or hot for 6 hours. Leak resistant.",
+      "image": "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&auto=format&fit=crop",
+      "affiliate_link": "https://www.amazon.com/Stanley-IceFlow-Stainless-Tumbler-Straw/dp/B09K7C3Z1L",
+      "category": "home",
+      "price": "$35.00",
+      "rating": 4.5,
+      "reviews": 5432
+    },
+    {
+      "id": 5,
+      "title": "Cuisinart 14-Cup Food Processor",
+      "description": "Elite collection with 720-watt motor, stainless steel blades, and large feed tube. Professional grade.",
+      "image": "https://images.unsplash.com/photo-1585515320310-259814833e62?w=800&auto=format&fit=crop",
+      "affiliate_link": "https://www.amazon.com/Cuisinart-Food-Processor-Elemental-14-Cup/dp/B07GVFBJMY",
+      "category": "home",
+      "price": "$199.95",
+      "rating": 4.4,
+      "reviews": 8765
+    },
+    {
+      "id": 6,
+      "title": "Lululemon The Mat (5mm)",
+      "description": "Premium yoga mat with natural rubber base and polyurethane top for optimal grip when you sweat.",
+      "image": "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=800&auto=format&fit=crop",
+      "affiliate_link": "https://shop.lululemon.com/p/yoga-mats/The-Mat-5mm/_/prod9360164",
+      "category": "fitness",
+      "price": "$88.00",
+      "rating": 4.9,
+      "reviews": 3210
+    },
+    {
+      "id": 7,
+      "title": "Nike Air Zoom Pegasus 40",
+      "description": "Responsive and springy running shoes with two Zoom Air units and a redesigned midfoot strap.",
+      "image": "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&auto=format&fit=crop",
+      "affiliate_link": "https://www.nike.com/t/air-zoom-pegasus-40-mens-road-running-shoes-3z7C1V",
+      "category": "fitness",
+      "price": "$140.00",
+      "rating": 4.7,
+      "reviews": 15432
+    },
+    {
+      "id": 8,
+      "title": "Hydro Flask 32 oz Wide Mouth",
+      "description": "Double-wall vacuum insulation, 18/8 pro-grade stainless steel, and Flex Cap with honeycomb straw.",
+      "image": "https://images.unsplash.com/photo-1625772299849-3a6b8c8b3b3b?w=800&auto=format&fit=crop",
+      "affiliate_link": "https://www.hydroflask.com/32-oz-wide-mouth",
+      "category": "fitness",
+      "price": "$44.95",
+      "rating": 4.6,
+      "reviews": 9876
+    },
+    {
+      "id": 9,
+      "title": "Philips SmartSleep Wake-Up Light",
+      "description": "Simulates sunrise to wake naturally, sunset fading light for easier sleep. FM radio and 5 natural sounds.",
+      "image": "https://images.unsplash.com/photo-1545239351-ef35f43d514b?w=800&auto=format&fit=crop",
+      "affiliate_link": "https://www.amazon.com/Philips-Simulates-Sunset-Relaxation-HF3520/dp/B00M4FJRHQ",
+      "category": "home",
+      "price": "$94.95",
+      "rating": 4.3,
+      "reviews": 6543
+    },
+    {
+      "id": 10,
+      "title": "Bose SoundLink Flex Bluetooth Speaker",
+      "description": "Portable, waterproof speaker with PositionIQ technology for optimized sound in any orientation.",
+      "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=800&auto=format&fit=crop",
+      "affiliate_link": "https://www.amazon.com/Bose-SoundLink-Portable-Bluetooth-Speaker/dp/B09H3VTR1L",
+      "category": "tech",
+      "price": "$149.00",
+      "rating": 4.5,
+      "reviews": 4321
+    },
+    {
+      "id": 11,
+      "title": "Theragun Elite Massage Device",
+      "description": "QuietForce motor, 5th Gen technology with OLED screen, and 16mm amplitude for deep muscle relief.",
+      "image": "https://images.unsplash.com/photo-1626785774573-4b799a2d5d73?w=800&auto=format&fit=crop",
+      "affiliate_link": "https://www.therabody.com/us/en-us/theragun-elite.html",
+      "category": "fitness",
+      "price": "$399.00",
+      "rating": 4.8,
+      "reviews": 2187
+    },
+    {
+      "id": 12,
+      "title": "Casper Sleep Original Pillow",
+      "description": "Adaptive foam and fiber fill that's soft but supportive. Breathable cotton cover. Standard/Queen size.",
+      "image": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?w=800&auto=format&fit=crop",
+      "affiliate_link": "https://casper.com/pillows/original-pillow/",
+      "category": "home",
+      "price": "$65.00",
+      "rating": 4.4,
+      "reviews": 7654
+    }
+  ]
+}
