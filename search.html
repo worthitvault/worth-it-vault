@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Worth It Vault | Product Finder</title>
+    
+    <!-- Fonts & Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="search-style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <a href="index.html" class="logo">WORTH IT VAULT</a>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#featured">Featured</a>
+                <a href="index.html#products">Products</a>
+                <a href="search.html" class="active">Finder</a>
+            </nav>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="index.html">Home</a>
+        <a href="index.html#featured">Featured</a>
+        <a href="index.html#products">Products</a>
+        <a href="search.html">Finder</a>
+    </div>
+
+    <!-- Search Hero Section -->
+    <section class="search-hero">
+        <div class="container">
+            <div class="search-hero-content">
+                <span class="search-badge"><i class="fas fa-search"></i> Product Finder</span>
+                <h1>Find Your Perfect <span class="gold-text">Match</span></h1>
+                <p class="search-description">Search by post number, category, or product name</p>
+                
+                <!-- Premium Search Bar -->
+                <div class="premium-search-container">
+                    <div class="search-wrapper">
+                        <i class="fas fa-search search-icon"></i>
+                        <input type="text" id="searchInput" class="premium-search-input" 
+                               placeholder="e.g., 'post 4', 'tech', 'headphones'..." autofocus>
+                        <button class="search-clear-btn" id="clearSearch">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Search Filters -->
+                    <div class="search-filters">
+                        <button class="filter-chip active" data-filter="all">All</button>
+                        <button class="filter-chip" data-filter="post">Post Number</button>
+                        <button class="filter-chip" data-filter="category">Category</button>
+                        <button class="filter-chip" data-filter="product">Product Name</button>
+                    </div>
+                    
+                    <!-- Quick Post Number Pills -->
+                    <div class="quick-posts">
+                        <span class="quick-label">Popular Posts:</span>
+                        <div class="post-pills">
+                            <a href="#" class="post-pill" data-post="4">#4</a>
+                            <a href="#" class="post-pill" data-post="7">#7</a>
+                            <a href="#" class="post-pill" data-post="12">#12</a>
+                            <a href="#" class="post-pill" data-post="15">#15</a>
+                            <a href="#" class="post-pill" data-post="22">#22</a>
+                            <a href="#" class="post-pill" data-post="28">#28</a>
+                            <a href="#" class="post-pill" data-post="31">#31</a>
+                            <a href="#" class="post-pill" data-post="35">#35</a>
+                            <a href="#" class="post-pill" data-post="42">#42</a>
+                            <a href="#" class="post-pill" data-post="47">#47</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="search-results-section">
+        <div class="container">
+            <!-- Search Stats -->
+            <div class="results-header" id="resultsHeader" style="display: none;">
+                <div class="results-info">
+                    <h3 id="resultsTitle">Search Results</h3>
+                    <span class="results-count" id="resultsCount"></span>
+                </div>
+                <div class="results-actions">
+                    <button class="view-toggle" id="gridViewBtn" title="Grid View">
+                        <i class="fas fa-th"></i>
+                    </button>
+                    <button class="view-toggle active" id="listViewBtn" title="List View">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Main Results Area -->
+            <div id="searchResults" class="search-results">
+                <!-- Initial state - show search prompt -->
+                <div class="search-prompt">
+                    <div class="prompt-icon">
+                        <i class="fas fa-arrow-up"></i>
+                    </div>
+                    <h3>Enter a post number to begin</h3>
+                    <p>Try searching: <span class="example-post">4</span>, <span class="example-post">7</span>, <span class="example-post">12</span>, <span class="example-post">31</span></p>
+                </div>
+            </div>
+
+            <!-- Related Products Section (Rotating) -->
+            <div class="related-products-section" id="relatedSection" style="display: none;">
+                <div class="related-header">
+                    <h3><i class="fas fa-magic"></i> You Might Also Like</h3>
+                    <button class="rotate-btn" id="rotateRelatedBtn" title="Show different products">
+                        <i class="fas fa-sync-alt"></i> Rotate
+                    </button>
+                </div>
+                <div class="related-products-grid" id="relatedProductsGrid">
+                    <!-- Will be populated by JS -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- No Results Modal (hidden by default) -->
+    <div class="no-results-modal" id="noResultsModal">
+        <div class="modal-content">
+            <i class="fas fa-search modal-icon"></i>
+            <h3>No Results Found</h3>
+            <p>We couldn't find any products for "<span id="searchTermDisplay"></span>"</p>
+            <div class="modal-suggestions">
+                <p>Try searching:</p>
+                <div class="suggestion-pills">
+                    <button class="suggestion-pill" data-post="4">Post #4</button>
+                    <button class="suggestion-pill" data-post="7">Post #7</button>
+                    <button class="suggestion-pill" data-post="12">Post #12</button>
+                    <button class="suggestion-pill" data-category="tech">Tech</button>
+                    <button class="suggestion-pill" data-category="fitness">Fitness</button>
+                    <button class="suggestion-pill" data-category="home">Home</button>
+                </div>
+            </div>
+            <button class="modal-close" id="closeModalBtn"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="index.html" class="footer-logo">WORTH IT VAULT</a>
+                    <p class="footer-description">Premium product finder. Search by post number for curated collections.</p>
+                    <div class="footer-social">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#featured">Featured</a></li>
+                        <li><a href="index.html#products">Products</a></li>
+                        <li><a href="search.html">Product Finder</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Popular Posts</h3>
+                    <ul>
+                        <li><a href="#" data-post="4">Post #4 - Tech Picks</a></li>
+                        <li><a href="#" data-post="7">Post #7 - Fitness</a></li>
+                        <li><a href="#" data-post="12">Post #12 - Home</a></li>
+                        <li><a href="#" data-post="31">Post #31 - Gift Guide</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact</h3>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> finder@worthitvault.com</p>
+                        <p class="disclaimer-small">As an Amazon Associate I earn from qualifying purchases.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Worth It Vault. All rights reserved. | <a href="#">Privacy</a> | <a href="#">Terms</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>
