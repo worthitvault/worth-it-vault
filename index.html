@@ -18,22 +18,55 @@
 
 <body>
     <!-- Header -->
-    <header>
-        <div class="container header-content">
-            <a href="#" class="logo">WORTH IT VAULT</a>
+    <!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="container hero-content">
+        <span class="hero-subtitle fade-in">Premium Affiliate Hub</span>
+        <h1 class="fade-in delay-1">NOTHING CHANGES IF<br>NOTHING CHANGES</h1>
+        <p class="hero-description fade-in delay-2">Curated top-tier products • Trusted by 10k+ affiliates • Real-time earnings</p>
+        
+        <!-- Button Container with Text Below -->
+        <div class="button-master-container fade-in delay-3">
+            <!-- Button Row -->
+            <div class="button-row">
+                <!-- Button 1: Explore Products (Solid Gold) -->
+                <a href="#products" class="btn btn-primary btn-explore">
+                    <span class="btn-text">Explore Products</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                
+                <!-- Button 2: Search by Post (Outlined with Text Below) -->
+                <div class="btn-search-wrapper">
+                    <a href="search.html" target="_blank" class="btn btn-outline btn-search-header">
+                        <i class="fas fa-search"></i>
+                        <span class="btn-text">Search by Post</span>
+                        <i class="fas fa-hashtag"></i>
+                    </a>
+                    <span class="btn-helper-text">Find curated collections by number</span>
+                </div>
+                
+                <!-- Button 3: Featured (Solid Gold) -->
+                <a href="#featured" class="btn btn-primary btn-featured">
+                    <i class="fas fa-star"></i>
+                    <span class="btn-text">Featured</span>
+                </a>
+            </div>
             
-            <nav class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#featured">Featured</a>
-                <a href="#products">Products</a>
-                <a href="#contact">Contact</a>
-            </nav>
-            
-            <button class="mobile-menu-btn" id="mobileMenuBtn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <!-- Optional: Additional text below all buttons -->
+            <div class="buttons-footer-text">
+                <span class="footer-text-item">
+                    <i class="fas fa-check-circle"></i> 10k+ affiliates
+                </span>
+                <span class="footer-text-item">
+                    <i class="fas fa-check-circle"></i> 98% satisfaction
+                </span>
+                <span class="footer-text-item">
+                    <i class="fas fa-check-circle"></i> Instant access
+                </span>
+            </div>
         </div>
-    </header>
+    </div>
+</section>
 
     <!-- Mobile Menu (hidden by default) -->
     <div class="mobile-menu" id="mobileMenu">
@@ -205,4 +238,5 @@
 </body>
 
 </html>
+
 
