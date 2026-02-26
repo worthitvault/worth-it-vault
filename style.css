@@ -197,7 +197,7 @@ header {
     display: inline-flex;
     align-items: center;
     margin-right: 40px; 
-    gap: 30px;
+    gap: 16px;
     padding: 16px 32px;
     border-radius: 50px;
     font-weight: 600;
@@ -885,4 +885,5 @@ footer::before {
 .delay-2 { animation-delay: 0.2s; }
 
 .delay-3 { animation-delay: 0.3s; }
+
 
