@@ -196,7 +196,7 @@ header {
 .btn {
     display: inline-flex;
     align-items: center;
-    gap: 12px;
+    gap: 30px;
     padding: 16px 32px;
     border-radius: 50px;
     font-weight: 600;
@@ -882,4 +882,5 @@ footer::before {
 
 .delay-1 { animation-delay: 0.1s; }
 .delay-2 { animation-delay: 0.2s; }
+
 .delay-3 { animation-delay: 0.3s; }
