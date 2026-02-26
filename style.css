@@ -192,47 +192,301 @@ header {
     line-height: 1.8;
 }
 
-/* ===== BUTTONS ===== */
+/* ===== BUTTON MASTER CONTAINER ===== */
+.button-master-container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+/* Button Row - Desktop Layout */
+.button-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Base Button Styles - All Same Size */
 .btn {
     display: inline-flex;
     align-items: center;
-    margin-right: 40px; 
-    margin-bottom: 15px;
-    gap: 16px;
-    padding: 16px 32px;
+    justify-content: center;
+    gap: 12px;
+    padding: 16px 28px;
     border-radius: 50px;
     font-weight: 600;
     text-decoration: none;
-    transition: var(--transition-smooth);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     border: none;
     cursor: pointer;
     font-size: 1rem;
+    min-width: 180px;
+    height: 58px;
+    white-space: nowrap;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
+/* Primary Button (Solid Gold) */
 .btn-primary {
-    background: linear-gradient(135deg, var(--gold-primary), var(--gold-dim));
+    background: linear-gradient(135deg, var(--gold-primary), #FFA500);
     color: var(--black-100);
     box-shadow: 0 10px 20px -5px rgba(255, 215, 0, 0.3);
+    border: 2px solid transparent;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: -1;
 }
 
 .btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 20px 30px -5px rgba(255, 215, 0, 0.4);
-    gap: 16px;
+    transform: translateY(-3px);
+    box-shadow: 0 20px 30px -5px rgba(255, 215, 0, 0.5);
 }
 
+.btn-primary:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* Outline Button (Gold Border) */
 .btn-outline {
-    border: 1px solid var(--gold-primary);
-    color: var(--gold-primary);
     background: transparent;
+    color: var(--gold-primary);
+    border: 2px solid var(--gold-primary);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-outline::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 215, 0, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease, height 0.6s ease;
+    z-index: -1;
 }
 
 .btn-outline:hover {
-    background: var(--gold-primary);
     color: var(--black-100);
-    transform: translateY(-2px);
+    border-color: var(--gold-primary);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px -5px rgba(255, 215, 0, 0.4);
 }
 
+.btn-outline:hover::before {
+    width: 300px;
+    height: 300px;
+    background: var(--gold-primary);
+}
+
+/* Search Button Specific */
+.btn-search-header {
+    gap: 8px;
+}
+
+.btn-search-header i.fa-search {
+    font-size: 1rem;
+}
+
+.btn-search-header i.fa-hashtag {
+    font-size: 0.9rem;
+    background: rgba(255, 215, 0, 0.2);
+    padding: 4px 8px;
+    border-radius: 30px;
+}
+
+.btn-outline:hover i.fa-hashtag {
+    background: rgba(0, 0, 0, 0.2);
+    color: var(--black-100);
+}
+
+/* Search Button Wrapper (for text below) */
+.btn-search-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-helper-text {
+    font-size: 0.8rem;
+    color: var(--gold-primary);
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+    white-space: nowrap;
+    background: rgba(255, 215, 0, 0.1);
+    padding: 4px 12px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+/* Featured Button Specific */
+.btn-featured i.fa-star {
+    color: var(--black-100);
+    transition: transform 0.3s ease;
+}
+
+.btn-featured:hover i.fa-star {
+    transform: rotate(360deg);
+}
+
+/* Buttons Footer Text */
+.buttons-footer-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.footer-text-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.footer-text-item i {
+    color: var(--gold-primary);
+    font-size: 1rem;
+}
+
+/* ===== MOBILE LAYOUT (Completely Redesigned) ===== */
+@media (max-width: 768px) {
+    .button-row {
+        flex-direction: column;
+        gap: 25px;
+        width: 100%;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 320px;
+        min-width: unset;
+        height: 60px;
+        font-size: 1.1rem;
+    }
+    
+    /* Mobile Order: 1. Search by Post (top), 2. Featured, 3. Explore */
+    .btn-search-wrapper {
+        width: 100%;
+        max-width: 320px;
+        order: 1;  /* Search appears first on mobile */
+    }
+    
+    .btn-featured {
+        order: 2;  /* Featured appears second on mobile */
+    }
+    
+    .btn-explore {
+        order: 3;  /* Explore appears third on mobile */
+    }
+    
+    .btn-search-wrapper .btn {
+        width: 100%;
+        max-width: 320px;
+    }
+    
+    .btn-helper-text {
+        font-size: 0.75rem;
+        padding: 4px 12px;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.4;
+    }
+    
+    .buttons-footer-text {
+        flex-direction: column;
+        gap: 12px;
+        align-items: flex-start;
+        padding: 0 20px;
+        margin-top: 30px;
+    }
+    
+    .footer-text-item {
+        font-size: 0.85rem;
+    }
+}
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .btn {
+        height: 55px;
+        font-size: 1rem;
+        padding: 14px 20px;
+    }
+    
+    .btn-search-wrapper,
+    .btn,
+    .btn-search-wrapper .btn {
+        max-width: 280px;
+    }
+    
+    .btn-helper-text {
+        font-size: 0.7rem;
+        max-width: 280px;
+    }
+    
+    .buttons-footer-text {
+        padding: 0 10px;
+    }
+}
+
+/* Tablet Adjustments */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .button-row {
+        gap: 15px;
+    }
+    
+    .btn {
+        padding: 16px 20px;
+        min-width: 160px;
+        font-size: 0.95rem;
+    }
+    
+    .btn-helper-text {
+        font-size: 0.7rem;
+    }
+}
+
+/* Animation for buttons */
+@keyframes buttonPulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(255, 215, 0, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+}
+
+.btn-primary {
+    animation: buttonPulse 2s infinite;
+}
+
+.btn-primary:hover {
+    animation: none;
+}
 /* ===== FEATURED SECTION ===== */
 .featured {
     padding: 100px 0;
@@ -886,6 +1140,7 @@ footer::before {
 .delay-2 { animation-delay: 0.2s; }
 
 .delay-3 { animation-delay: 0.3s; }
+
 
 
 
